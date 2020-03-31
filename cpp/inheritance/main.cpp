@@ -5,9 +5,15 @@ using namespace std;
 class Base
 {
 public:
+    Base()
+    {
+        cout << "Default constructor from base" << endl;
+    }
+
     Base(char c)
     {
         _char = c;
+        cout << "Constructor from base" << endl;
     }
 
     virtual void hello()
@@ -31,7 +37,15 @@ private:
 class Derived: public Base
 {
 public:
-    Derived(char c): Base(c + 1), _char(c){}
+    Derived()
+    {
+        cout << "Default constructor from derived" << endl;
+    }
+
+    Derived(char c): Base(c + 1), _char(c)
+    {
+        cout << "Constructor from derived" << endl;
+    }
 
     virtual void hello()
     {
